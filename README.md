@@ -28,7 +28,7 @@ The assessment followed a structured reconnaissance and enumeration workflow des
 
 ## Risk Analysis
 
-The following risks were identified based on observed misconfigurations and exposed services within the environment:
+The identified risks highlight how common configuration weaknesses can be leveraged by attackers during the early stages of an intrusion.
 ### 1. Exposed SSH Service (Port 22)
 
 **Risk:** The SSH service is publicly accessible and may allow unauthorized access if weak credentials or outdated configurations are present.
@@ -88,6 +88,8 @@ The following MITRE ATT&CK techniques were observed or simulated during the asse
 ### T1021 – Remote Services
 - SSH and SMB services could be leveraged for remote access if credentials are compromised.
 
+These techniques align with early-stage adversary activity, particularly reconnaissance, discovery, and initial access, which are critical phases in real-world cyber attacks.
+
 ## Remediation Recommendations
 - Patch management
 - Service hardening
@@ -97,3 +99,6 @@ The following MITRE ATT&CK techniques were observed or simulated during the asse
 
 An attacker could begin by performing network scanning to identify active hosts and exposed services. Once services such as SSH and web servers are discovered, enumeration techniques can reveal system details and potential vulnerabilities. If weaknesses are present, the attacker could attempt credential-based access or exploit web application flaws, leading to initial system compromise and potential lateral movement within the network.
 
+## Key Takeaway
+
+This assessment demonstrates how relatively minor misconfigurations and exposed services can be combined into a viable attack path. While each issue alone may appear low risk, together they significantly increase the likelihood of initial access and further exploitation within the environment.
