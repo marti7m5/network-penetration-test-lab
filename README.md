@@ -2,8 +2,9 @@
 Hands-on network penetration testing lab simulating real-world internal security assessment with Nmap, Nikto, and Gobuster.
 
 ## Objective
-Conduct a simulated internal network penetration test to identify vulnerabilities, misconfigurations, and attack paths.
+Perform a simulated internal network penetration test to identify attack surfaces, analyze security weaknesses, and demonstrate how an attacker could gain initial access and move within the environment.
 
+The following tools were used to simulate common attacker reconnaissance and enumeration techniques:
 ## Tools Used
 - Nmap
 - Nikto
@@ -11,6 +12,7 @@ Conduct a simulated internal network penetration test to identify vulnerabilitie
 - Netcat
 
 ## Methodology
+The assessment followed a structured reconnaissance and enumeration workflow designed to simulate real-world attacker behavior:
 1. Network Discovery
 2. Port Scanning
 3. Service Enumeration
@@ -26,6 +28,7 @@ Conduct a simulated internal network penetration test to identify vulnerabilitie
 
 ## Risk Analysis
 
+The following risks were identified based on observed misconfigurations and exposed services within the environment:
 ### 1. Exposed SSH Service (Port 22)
 
 **Risk:** The SSH service is publicly accessible and may allow unauthorized access if weak credentials or outdated configurations are present.
@@ -66,8 +69,7 @@ Conduct a simulated internal network penetration test to identify vulnerabilitie
 
 ## MITRE ATT&CK Mapping
 
-The following techniques were observed or simulated during the assessment:
-
+The following MITRE ATT&CK techniques were observed or simulated during the assessment to reflect realistic adversary behavior:
 ### T1046 – Network Service Discovery
 - Used Nmap to identify active hosts and open ports within the network.
 
@@ -85,7 +87,13 @@ The following techniques were observed or simulated during the assessment:
 
 ### T1021 – Remote Services
 - SSH and SMB services could be leveraged for remote access if credentials are compromised.
+
 ## Remediation Recommendations
 - Patch management
 - Service hardening
 - Network segmentation
+
+## Attack Path Summary
+
+An attacker could begin by performing network scanning to identify active hosts and exposed services. Once services such as SSH and web servers are discovered, enumeration techniques can reveal system details and potential vulnerabilities. If weaknesses are present, the attacker could attempt credential-based access or exploit web application flaws, leading to initial system compromise and potential lateral movement within the network.
+
