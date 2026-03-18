@@ -91,9 +91,9 @@ The following MITRE ATT&CK techniques were observed or simulated during the asse
 These techniques align with early-stage adversary activity, particularly reconnaissance, discovery, and initial access, which are critical phases in real-world cyber attacks.
 
 ## Remediation Recommendations
-- Patch management
-- Service hardening
-- Network segmentation
+- Implement regular patch management to address known vulnerabilities
+- Harden exposed services by restricting access and disabling unnecessary features
+- Apply network segmentation to limit attacker movement within the environment
 
 ## Attack Path Summary
 
@@ -106,3 +106,5 @@ This assessment demonstrates how relatively minor misconfigurations and exposed 
 ## Sample Scan Output
 
 ![Nmap Scan](images/nmap-scan.png)
+
+*Figure: Nmap service enumeration identifying an exposed SSH service and system details.*
