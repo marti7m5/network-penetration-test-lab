@@ -108,4 +108,4 @@ This assessment demonstrates how relatively minor misconfigurations and exposed 
 
 ![Nmap Scan](images/nmap-scan.png)
 
-*Figure: Nmap service enumeration identifying an exposed SSH service and system details.*
+_*Figure: Nmap service enumeration identifying an exposed SSH service and system details.*_
