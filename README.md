@@ -102,3 +102,7 @@ An attacker could begin by performing network scanning to identify active hosts 
 ## Key Takeaway
 
 This assessment demonstrates how relatively minor misconfigurations and exposed services can be combined into a viable attack path. While each issue alone may appear low risk, together they significantly increase the likelihood of initial access and further exploitation within the environment.
+
+## Sample Scan Output
+
+![Nmap Scan](images/nmap-scan.png)
