@@ -105,4 +105,4 @@ This assessment demonstrates how relatively minor misconfigurations and exposed 
 
 ## Sample Scan Output
 
-<img src="images/nmap-scan.png" width="700">
+![Nmap Scan](images/nmap-scan.png)
