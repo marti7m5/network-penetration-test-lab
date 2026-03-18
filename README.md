@@ -31,7 +31,7 @@ The assessment followed a structured reconnaissance and enumeration workflow des
 The identified risks highlight how common configuration weaknesses can be leveraged by attackers during the early stages of an intrusion.
 ### 1. Exposed SSH Service (Port 22)
 
-**Risk:** The SSH service is publicly accessible and may allow unauthorized access if weak credentials or outdated configurations are present.
+**Risk:** The SSH service is exposed within the internal environment and may allow unauthorized access if weak credentials or outdated configurations are present.
 
 **Impact:** An attacker could perform brute-force attacks or exploit vulnerabilities to gain initial access to the system, potentially leading to full system compromise.
 
@@ -94,6 +94,7 @@ These techniques align with early-stage adversary activity, particularly reconna
 - Implement regular patch management to address known vulnerabilities
 - Harden exposed services by restricting access and disabling unnecessary features
 - Apply network segmentation to limit attacker movement within the environment
+- Restrict SSH access to authorized hosts or administrators only
 
 ## Attack Path Summary
 
