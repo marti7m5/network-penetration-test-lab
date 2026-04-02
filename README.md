@@ -1,6 +1,8 @@
 # Lab Overview
 This lab simulates an internal network penetration test within a controlled environment. The assessment includes reconnaissance, service enumeration, vulnerability scanning, and basic validation of findings using tools such as Nmap, Nikto, and Gobuster to identify exposed services, misconfigurations, and potential attack vectors.
 
+Key findings included exposed SSH services, missing HTTP security headers, service version disclosure, and accessible file shares. These issues increase the attack surface and could allow unauthorized access, data exposure, or further exploitation if left unmitigated.
+
 ## Objective
 Perform a simulated internal network penetration test to identify attack surfaces, analyze security weaknesses, and demonstrate how an attacker could gain initial access and move within the environment.
 
@@ -13,11 +15,11 @@ The following tools were used to simulate common attacker reconnaissance and enu
 
 ## Methodology
 1. Network Discovery – Identified active hosts within the target network  
-2. Port Scanning – Discovered open ports and exposed services using Nmap  
-3. Service Enumeration – Enumerated running services and versions  
-4. Vulnerability Scanning – Identified potential vulnerabilities using Nikto  
-5. Directory Enumeration – Discovered hidden web directories using Gobuster  
-6. Validation – Verified findings and analyzed potential security impact  
+2. Port Scanning – Discovered open ports using Nmap  
+3. Service Enumeration – Identified running services and versions  
+4. Vulnerability Scanning – Assessed web services using Nikto  
+5. Directory Enumeration – Discovered hidden directories using Gobuster  
+6. Analysis – Evaluated findings and determined potential security risks  
 
 ## Key Findings
 - Exposed services including SSH, SMB, NFS, and web servers  
@@ -116,9 +118,11 @@ These techniques align with early-stage adversary activity, particularly reconna
 
 An attacker could begin by performing network scanning to identify active hosts and exposed services. Once services such as SSH and web servers are discovered, enumeration techniques can reveal system details and potential vulnerabilities. If weaknesses are present, the attacker could attempt credential-based access or exploit web application flaws, leading to initial system compromise and potential lateral movement within the network.
 
-## Key Takeaway
+## Conclusion
 
-This assessment demonstrates how relatively minor misconfigurations and exposed services can be combined into a viable attack path. While each issue alone may appear low risk, together they significantly increase the likelihood of initial access and further exploitation within the environment.
+This lab demonstrates how common misconfigurations and exposed services can increase the attack surface of an internal network. By performing structured reconnaissance and analysis, multiple potential security risks were identified that could be leveraged by an attacker.
+
+These findings highlight the importance of proper configuration, patch management, and service hardening in securing enterprise environments.
 
 ## Sample Scan Output
 
