@@ -1,71 +1,87 @@
-# Network Penetration Testing Lab
-Hands-on network penetration testing lab simulating real-world internal security assessment with Nmap, Nikto, and Gobuster.
+# Lab Overview
+This lab simulates an internal network penetration test within a controlled environment. The assessment includes reconnaissance, service enumeration, vulnerability scanning, and basic validation of findings using tools such as Nmap, Nikto, and Gobuster to identify exposed services, misconfigurations, and potential attack vectors.
 
 ## Objective
 Perform a simulated internal network penetration test to identify attack surfaces, analyze security weaknesses, and demonstrate how an attacker could gain initial access and move within the environment.
 
 The following tools were used to simulate common attacker reconnaissance and enumeration techniques:
 ## Tools Used
-- Nmap
-- Nikto
-- Gobuster
-- Netcat
+- Kali Linux  
+- Nmap  
+- Nikto  
+- Gobuster  
 
 ## Methodology
-The assessment followed a structured reconnaissance and enumeration workflow designed to simulate real-world attacker behavior:
-1. Network Discovery
-2. Port Scanning
-3. Service Enumeration
-4. Vulnerability Scanning
-5. Directory Enumeration
-6. Manual Validation
+1. Network Discovery – Identified active hosts within the target network  
+2. Port Scanning – Discovered open ports and exposed services using Nmap  
+3. Service Enumeration – Enumerated running services and versions  
+4. Vulnerability Scanning – Identified potential vulnerabilities using Nikto  
+5. Directory Enumeration – Discovered hidden web directories using Gobuster  
+6. Validation – Verified findings and analyzed potential security impact  
 
 ## Key Findings
-- Open ports and exposed services
-- Missing HTTP security headers
-- Accessible file shares
-- Service version disclosure
+- Exposed services including SSH, SMB, NFS, and web servers  
+- Missing HTTP security headers increasing risk of web-based attacks  
+- Accessible file shares indicating potential data exposure  
+- Service version disclosure enabling targeted exploitation
+
+## Risk Impact
+
+- Increased attack surface due to exposed services  
+- Potential unauthorized access to sensitive files  
+- Higher likelihood of targeted exploitation through version disclosure  
 
 ## Risk Analysis
 
-The identified risks highlight how common configuration weaknesses can be leveraged by attackers during the early stages of an intrusion.
 ### 1. Exposed SSH Service (Port 22)
 
-**Risk:** The SSH service is exposed within the internal environment and may allow unauthorized access if weak credentials or outdated configurations are present.
+**Risk:**  
+The identified attack highlights how misconfigured systems can be leveraged by attackers during the early stages of an intrusion. Exposed SSH services may allow unauthorized access if weak credentials or outdated configurations are present.
 
-**Impact:** An attacker could perform brute-force attacks or exploit vulnerabilities to gain initial access to the system, potentially leading to full system compromise.
+**Impact:**  
+An attacker could perform brute-force attacks or exploit vulnerabilities to gain initial access, potentially leading to full system compromise.
 
-**Likelihood:** Moderate. SSH is a common attack target, and automated tools frequently scan for exposed services.
+**Likelihood:**  
+Moderate. SSH is a common attack target, and automated tools frequently scan for exposed services.
 
 ---
 
 ### 2. Missing HTTP Security Headers
 
-**Risk:** The web server does not implement key security headers such as X-Frame-Options and Content-Security-Policy.
+**Risk:**  
+The web server does not implement key security headers such as X-Frame-Options and Content-Security-Policy.
 
-**Impact:** This could allow attacks such as clickjacking or cross-site scripting (XSS), potentially compromising user sessions or sensitive data.
+**Impact:**  
+This could allow attacks such as clickjacking or cross-site scripting (XSS), potentially compromising user sessions or sensitive data.
 
-**Likelihood:** High. Misconfigured headers are common and easily exploitable.
+**Likelihood:**  
+High. Misconfigured headers are common and easily exploitable.
 
 ---
 
 ### 3. Service Version Disclosure
 
-**Risk:** The server reveals software version information (e.g., nginx version), which can be used by attackers to identify known vulnerabilities.
+**Risk:**  
+The server reveals software version information (e.g., nginx version), which can be used by attackers to identify known vulnerabilities.
 
-**Impact:** Attackers can target specific exploits associated with the disclosed version, increasing the likelihood of successful compromise.
+**Impact:**  
+Attackers can target specific exploits associated with the disclosed version, increasing the likelihood of successful compromise.
 
-**Likelihood:** High. Automated scanners actively look for version disclosures.
+**Likelihood:**  
+High. Automated scanners actively look for version disclosures.
 
 ---
 
 ### 4. Accessible File Shares (SMB/NFS)
 
-**Risk:** File-sharing services are accessible and may allow unauthorized users to read or modify sensitive data.
+**Risk:**  
+File-sharing services are accessible and may allow unauthorized users to read or modify sensitive data.
 
-**Impact:** Could lead to data leakage, credential exposure, or lateral movement within the network.
+**Impact:**  
+Could lead to data leakage, credential exposure, or lateral movement within the network.
 
-**Likelihood:** Moderate to High depending on access controls.
+**Likelihood:**  
+Moderate to High, depending on access controls.
 
 ## MITRE ATT&CK Mapping
 
